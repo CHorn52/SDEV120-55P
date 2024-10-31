@@ -1,0 +1,32 @@
+START
+
+    // Step 1: Plan
+        We need to get inputs from the user about the refrigerator
+        Prompt for model name and interior height, width, and depth
+        Create formula for cubic inches to cubic feet
+        Calculate cubic inche then calculate cubic feet
+        Return the model name with the capacity in cubic feet
+
+    // Step 2: Input
+        PRINT "Enter refrigerator model name:"
+        GET model_name
+
+        PRINT "Enter interior height in inches:"
+        GET height
+
+        PRINT "Enter interior width in inches:"
+        GET width
+
+        PRINT "Enter interior depth in inches:"
+        GET depth
+
+    // Step 3: Process
+        SET CUBIC_INCHES_TO_CUBIC_FOOT = 1728
+        SET total_cubic_inches = height * width * depth
+        SET capacity_cubic_feet = total_cubic_inches / CUBIC_INCHES_IN_CUBIC_FOOT
+
+    // Step 4: Output
+        PRINT "Refrigerator Model: ", model_name
+        PRINT "Capacity in cubic feet: ", capacity_cubic_feet
+
+END
