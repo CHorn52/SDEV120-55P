@@ -1,0 +1,27 @@
+START
+
+    // Step 1: Plan
+        We need to get inputs from the user for the account balance
+        Initialize account balance and number of overdraft variables
+        Prompt for account balance and number of overdrafts
+        Create formula for overdraft fee
+        Calculate new account balance after subtracting overdraft fee
+        Return the overdraft fee and the new account balance
+
+    // Step 2: Input
+        PRINT "What is the account balance?: "
+        GET accountBalance
+
+        PRINT "How many time has the account been overdrawn?: "
+        GET numberOverdrafts
+
+    // Step 3: Process
+        SET overdraftFee = (accountBalance * 0.01) + (overDrafts * 5)
+        SET accountBalance = (accountBalance - overdraftFee)
+
+    // Step 4: Output
+        PRINT "Overdraft fee for this account: ", overdraftFee
+        PRINT "New account balance for this account: ", accountBalance
+        PRINT "Thanks for using this program."
+
+END
