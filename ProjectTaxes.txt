@@ -1,0 +1,44 @@
+START
+
+/* Declarations*/
+/* Variables needed */
+taxableWages
+stateTaxRate
+stateTaxAmount
+federalTaxRate
+federalTaxAmount
+dependentWithholding
+postTaxAmount
+
+/* Step 1: Plan */
+/* Assuming that all values are available, dependent value already calculated from number of dependents */
+Set state and federal tax rates
+Initialize taxableWages, dependentWithholding, and postTaxAmount
+Prompt for taxable wages and dependent withholdings
+Create formula for state tax rate and federal tax rate applied to taxable wages
+Calculate state tax amount, federal state amounts
+Deduct taxes and dependent withholdings from taxable wages
+Return the postTaxAmount
+
+/* Step 2: Input */
+/* Not actually print to screen because it will be pulled from database. */ 
+    PRINT "What is the Taxable Income (Gross Pay)?: "
+    GET taxableWages
+
+    PRINT "What is the Dependent Withholding amount ?: "
+    GET dependentWithholding
+
+/* Step 3: Process */
+    SET federalTaxAmount = (taxableWages * federalTaxRate)
+    SET stateTaxAmount = (taxableWages * stateTaxRate)
+    SET postTaxAmount = (taxableWages - dependentWithholding - stateTaxAmount - federalTaxAmount)
+
+/* Step 4: Output */
+    PRINT "Total Taxable Income: ", taxableWages
+    PRINT "State Taxes are calculated as: ", stateTaxAmount, " on a ", stateTaxRate * 100, " % Tax Rate"
+    PRINT "Federal Taxes are calculated as: ", federalTaxAmount, " on a ", federalTaxRate * 100, " % Tax Rate"
+    PRINT "Dependent Withholdings are calculated as: ", dependentWithholding
+    PRINT "Total Post-Tax and Dependent Withholding Income: ", postTaxAmount
+    PRINT "Thanks for using this program."
+
+END
